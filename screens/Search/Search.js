@@ -51,10 +51,10 @@ const Search = ({ navigation }) => {
 
             <FlatList
                 data={cities}
-                renderItem={({ item }) => {
+                renderItem={({ item, index }) => {
                     return (
                         <Card
-                            key={item.id}
+                            key={index}
                             style={style.list}
                             onPress={() => listClick(item.place_name)}
                         >
@@ -62,7 +62,7 @@ const Search = ({ navigation }) => {
                         </Card>
                     )
                 }}
-                keyExtractor={item => item.name}
+                keyExtractor={(item, key) => item.id}
             />
 
         </View>
