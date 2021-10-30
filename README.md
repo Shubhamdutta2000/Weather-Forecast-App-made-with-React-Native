@@ -42,3 +42,15 @@ react-native run-ios
 # Run on Android
 react-native run-android
 ```
+
+<br />
+
+## Libraries and API Used
+
+- React-Native
+- React-Native-paper
+- AsyncStorage
+- React-Native-Dotenv
+- React-Native-Navigation
+- Openweathermap-API
+- Mapbox-API
