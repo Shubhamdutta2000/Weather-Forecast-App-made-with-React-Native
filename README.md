@@ -9,6 +9,7 @@
 - **_Search Screen_**: User scan search any city by just typing in the input field
 - **_Home Screen_**: User can see the weather forcast of particular city
 - User can click on particular city in Search screen and they are redirected to Home Screen where they can see the weather forcast of that particular city.
+- Weather forcast data of last city that user have searched persist offline.
 
 <br />
 
