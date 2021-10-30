@@ -15,7 +15,7 @@ const Search = ({ navigation }) => {
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${text}.json?access_token=${ACCESS_TOKEN}`)
             .then(item => item.json())
             .then(data => {
-                setCities(data.features.slice(0, 9))
+                setCities(data.features.slice(0, 10))
             })
     }
 
@@ -51,18 +51,18 @@ const Search = ({ navigation }) => {
 
             <FlatList
                 data={cities}
-                renderItem={({ item, index }) => {
+                renderItem={({ item }) => {
                     return (
                         <Card
-                            key={index}
+                            key={item.id}
                             style={style.list}
                             onPress={() => listClick(item.place_name)}
                         >
-                            <Text>{item.place_name}</Text>
+                            <Text>{item && item.place_name}</Text>
                         </Card>
                     )
                 }}
-                keyExtractor={(item, key) => item.id}
+                keyExtractor={(item) => item.id}
             />
 
         </View>
