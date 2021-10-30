@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Title } from 'react-native-paper';
-import { View, Image } from 'react-native'
+import { View, Image, ScrollView } from 'react-native'
 import Header from '../../components/Header/Header'
 import { WEATHER_API_KEY } from "@env"
 import style from './Home.style';
@@ -55,36 +55,39 @@ const Home = (props) => {
 
     return (
         <View style={style.view}>
-            <Header name="Weather App" />
-            <View style={style.placeView}>
-                <Title style={style.title}>
-                    {info.name}
-                </Title>
-                <Image
-                    style={style.image}
-                    source={{ uri: "https://openweathermap.org/img/w/" + info.icon + ".png" }}
-                />
-                <Title style={style.desc}>
-                    {info.desc}
-                </Title>
-            </View>
+            <ScrollView>
+                <Header name="Weather App" />
+                <View style={style.placeView}>
 
-            <Card elevation={3} style={style.card}>
-                <Title style={style.infoTitle}>Temperature : {info.temp}</Title>
-            </Card>
-            <Card elevation={3} style={style.card}>
-                <Title style={style.infoTitle}>Humidity : {info.humidity}</Title>
-            </Card>
-            <Card elevation={3} style={style.card}>
-                <Title style={style.infoTitle}>Description :  {info.desc}</Title>
-            </Card>
-            <Card elevation={3} style={style.card}>
-                <Title style={style.infoTitle}>Pressure :  {info.pressure}</Title>
-            </Card>
-            <Card elevation={4} style={style.card}>
-                <Title style={style.infoTitle}>Wind Speed :  {info.wind}</Title>
-            </Card>
-        </View>
+                    <Title style={style.title}>
+                        {info.name}
+                    </Title>
+                    <Image
+                        style={style.image}
+                        source={{ uri: "https://openweathermap.org/img/w/" + info.icon + ".png" }}
+                    />
+                    <Title style={style.desc}>
+                        {info.desc}
+                    </Title>
+                </View>
+
+                <Card elevation={3} style={style.card}>
+                    <Title style={style.infoTitle}>Temperature : {info.temp}</Title>
+                </Card>
+                <Card elevation={3} style={style.card}>
+                    <Title style={style.infoTitle}>Humidity : {info.humidity}</Title>
+                </Card>
+                <Card elevation={3} style={style.card}>
+                    <Title style={style.infoTitle}>Description :  {info.desc}</Title>
+                </Card>
+                <Card elevation={3} style={style.card}>
+                    <Title style={style.infoTitle}>Pressure :  {info.pressure}</Title>
+                </Card>
+                <Card elevation={4} style={style.card}>
+                    <Title style={style.infoTitle}>Wind Speed :  {info.wind}</Title>
+                </Card>
+            </ScrollView>
+        </View >
     )
 }
 
